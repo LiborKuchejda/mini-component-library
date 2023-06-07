@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   height: 43px;
 `;
 
-const InnerSelect = styled.select`
+const NativeSelect = styled.select`
   position: absolute;
   top: 0;
   left: 0;
@@ -33,11 +33,11 @@ const VisualSelect = styled.div`
   color: ${COLORS.gray700};
   border-radius: 8px;
 
-  ${InnerSelect}:focus + & {
+  ${NativeSelect}:focus + & {
     outline: auto;
   }
 
-  ${InnerSelect}:hover + & {
+  ${NativeSelect}:hover + & {
     color: ${COLORS.black};
   }
   /* prevent this element to receive mouse events, this element is only visual
@@ -59,7 +59,7 @@ const Select = ({ label, value, onChange, children }) => {
 
   return (
     <Wrapper value={value} onChange={onChange}>
-      <InnerSelect>{children}</InnerSelect>
+      <NativeSelect>{children}</NativeSelect>
       <VisualSelect>
         {displayedValue}
         <IconWrapper>
